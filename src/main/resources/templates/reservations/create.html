@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <div th:replace="~{fragment :: meta}"></div>
+
+    <div th:replace="~{fragment :: styles}"></div>
+
+    <!-- FlatpickrのCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <title>店舗詳細</title>
+</head>
+<body>
+<div class="nagoyameshi-wrapper">
+    <div th:replace="~{fragment :: header}"></div>
+    <div sec:authorize="isAuthenticated()" class="col-lg-4 px-0 ps-lg-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" th:action="@{/shops/__${shop.getId()}__/reservations/create}" th:object="${reservationInputForm}">
+                    <div class="form-group mb-4">
+                        <label for="reserveDateTime" class="fw-bold">予約日時</label>
+                        <div th:if="${#fields.hasErrors('reserveDateTime')}" class="text-danger small mb-2" th:errors="*{reserveDateTime}"></div>
+                        <input type="text" id="reserveDateTime" class="form-control" th:field="*{reserveDateTime}" placeholder="予約日時を選択">
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="numberOfPeople" class="col-form-label text-md-left fw-bold">予約人数</label>
+                        <div th:if="${#fields.hasErrors('numberOfPeople')}" class="text-danger small mb-2" th:errors="*{numberOfPeople}"></div>
+                        <input type="number" class="form-control" th:field="*{numberOfPeople}" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-white shadow-sm w-100 nagoyameshi-btn">予約する</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div th:replace="~{fragment :: footer}"></div>
+<div th:replace="~{fragment :: scripts}"></div>
+
+<!-- FlatpickrのJavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    flatpickr("#reserveDateTime", {
+        enableTime: true, // 時間の選択を有効にする
+        dateFormat: "Y-m-d H:i", // 日付のフォーマット
+        minDate: "today", // 今日の日付から選択可能にする場合
+        });
+    });
+
+
+</script>
+</body>
+</html>

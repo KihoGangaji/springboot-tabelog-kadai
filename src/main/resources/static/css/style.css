@@ -1,0 +1,193 @@
+html {
+   font-size: 14px;
+ }
+ 
+ body {
+   font-family: 'Noto Sans JP', sans-serif;  
+ }
+ 
+ h1 {
+   font-size: 1.5rem;
+ }
+ 
+ h2 {
+   font-size: 1.475rem;
+ }
+ 
+ h3 {
+   font-size: 1.25rem;
+ }
+ 
+ a {
+   color: #5196a6;
+   text-decoration: none !important;
+ }
+ 
+ a:hover {
+     color: #407784;
+ }
+ 
+ footer {
+   width: 100%;
+   height: 60px;
+   position: relative;  /* positionをabsoluteからrelativeに変更 */
+   background-color: #f2f0eb;
+}
+
+.nagoyameshi-wrapper {
+   min-height: 100vh;
+   position: relative;
+   padding-bottom: 60px; /* フッター分の高さを確保 */
+   box-sizing: border-box;
+}
+
+ 
+ .nagoyameshi-navbar {
+   min-height: 60px;
+ }
+ 
+ .nagoyameshi-logo {
+   height: 80%;  
+ }
+ 
+ .nagoyameshi-btn {
+   background-color: #5196a6 !important;   
+   transition: 0.1s;
+ }
+ 
+ .nagoyameshi-btn:hover {
+   opacity: 0.8;   
+ }
+ 
+ .nagoyameshi-page-link {
+   color: #5196a6;
+ }
+ 
+ .nagoyameshi-page-link:hover {
+   color: #407784;
+ }
+ 
+ .nagoyameshi-active {
+   background-color: #5196a6 !important;
+   border-color: #5196a6 !important;
+ }
+ 
+ .nagoyameshi-pre-wrap {
+   /* 改行文字で行を折り返す */
+   white-space: pre-wrap;
+ }
+ 
+ .nagoyameshi-link-danger {
+     color: #f2594b;
+ }
+ 
+ .nagoyameshi-link-danger:hover {
+     color: #a63c3c;
+ }
+ 
+ .nagoyameshi-btn-danger {
+     background-color: #f2594b !important;
+     transition: 0.1s;
+ }
+ 
+ .nagoyameshi-btn-danger:hover {
+   opacity: 0.8;   
+ }
+ 
+ .nagoyameshi-dropdown-item:active {
+   background-color: #5196a6;
+ }
+ 
+ .nagoyameshi-card-link {
+   transition: 0.3s;
+ }
+ 
+ .nagoyameshi-card-link:hover {
+   opacity: 0.7;
+ }
+ 
+ .nagoyameshi-horizontal-card-image {
+   width: 100%;
+   height: 240px;
+   object-fit: cover;
+ }
+ 
+ .nagoyameshi-sort-box {
+   width: 150px;
+ }
+ 
+ .nagoyameshi-vertical-card-image {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+ }
+ 
+ .nagoyameshi-search-form {
+     max-width: 300px;
+ }
+ 
+ /* フォーム全体のスタイル */
+.nagoyameshi-subscription-form {
+    max-width: 400px; /* フォームの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 20px; /* パディングを追加 */
+    border: 1px solid #ccc; /* ボーダー */
+    border-radius: 5px; /* 角を丸くする */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+}
+
+/* ラベルのスタイル */
+.nagoyameshi-subscription-form label {
+    display: block; /* ブロック要素にして縦並びに */
+    margin-bottom: 8px; /* 下にマージン */
+    font-weight: 500; /* 太字 */
+}
+
+/* 入力フィールドのスタイル */
+.nagoyamehsi-subscription-form input[type="text"],
+.nagoyameshi-subscription-form input[type="hidden"] {
+    width: 100%; /* 幅を100%に */
+    padding: 10px; /* パディングを追加 */
+    margin-bottom: 16px; /* 下にマージン */
+    border: 1px solid #ccc; /* ボーダー */
+    border-radius: 4px; /* 角を丸くする */
+}
+
+/* ボタンのスタイル */
+.nagoyameshi-subscription-form button {
+    background-color: #5196a6; /* ボタンの背景色 */
+    color: #fff; /* ボタンの文字色 */
+    padding: 10px 15px; /* パディング */
+    border: none; /* ボーダーを削除 */
+    border-radius: 4px; /* 角を丸くする */
+    cursor: pointer; /* カーソルをポインターに */
+    transition: background-color 0.3s; /* ホバー時のトランジション */
+}
+
+.nagoyameshi-subscription-form button:hover {
+    background-color: #407784; /* ホバー時の背景色 */
+}
+
+/* エラーメッセージのスタイル */
+.nagoyameshi-error-message {
+    color: #f2594b; /* エラーの色 */
+    font-size: 0.875rem; /* フォントサイズ */
+    margin-bottom: 16px; /* 下にマージン */
+}
+
+
+ 
+ @media screen and (min-width: 1400px) {
+   .nagoyameshi-container {
+     max-width: 1200px;
+   }
+ }
+
+ .CardField {
+     border-radius: 4px 4px 0 0;
+     padding: 12px;
+     border: 1px solid rgba(50, 50, 93, 0.1);
+     height: 44px;
+     width: 100%;
+ }

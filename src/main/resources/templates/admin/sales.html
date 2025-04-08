@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>売上一覧</title>
+</head>
+<body>
+    <h1>売上一覧</h1>
+
+    <!-- 売上期間検索フォーム -->
+    <form action="/admin/sales/search" method="post">
+	    <label for="startDate">開始日:</label>
+	    <input type="date" id="startDate" name="startDate" th:value="${startDate}" required>
+	    <label for="endDate">終了日:</label>
+	    <input type="date" id="endDate" name="endDate" th:value="${endDate}" required>
+	    <button type="submit">検索</button>
+    </form>
+
+
+    <h2>売上一覧</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>店舗名</th>
+                <th>売上金額</th>
+                <th>売上日時</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="sale : ${salesList}">
+                <td th:text="${sale.id}"></td>
+                <td th:text="${sale.shop.name}"></td>
+                <td th:text="${sale.amount}"></td>
+                <td th:text="${sale.saleDate}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>売上合計: <span th:text="${totalSalesAmount}"></span>円</h2>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <div th:replace="~{fragment :: meta}"></div>
+    <div th:replace="~{fragment :: styles}"></div>
+    <title>レビュー編集</title>
+</head>
+<body>
+<div class="nagoyameshi-wrapper">
+    <!-- ヘッダー -->
+    <div th:replace="~{fragment :: header}"></div>
+
+    <main>
+        <div class="container pt-4 pb-5 nagoyameshi-container">
+            <div class="row justify-content-center">
+                <div class="col-xxl-9 col-xl-10 col-lg-11">
+                    <div class="container">
+                        <h2 class="col-lg-8 container mb-4">レビュー編集</h2>
+
+                        <div class="row">
+                            <div class="col-lg-8 container mb-4">
+                                <form th:action="@{/shops/{shopId}/reviews/{reviewId}/update(shopId=${shop.id}, reviewId=${review.id})}" method="post" th:object="${newReviewForm}">
+                                    <div class="form-group mb-3">
+                                        <label for="rating">評価:</label>
+                                        <select id="rating" class="form-control" th:field="*{rating}">
+                                            <option value="1" th:selected="${newReviewForm.rating == 1}" class="text-warning">★</option>
+                                            <option value="2" th:selected="${newReviewForm.rating == 2}" class="text-warning">★★</option>
+                                            <option value="3" th:selected="${newReviewForm.rating == 3}" class="text-warning">★★★</option>
+                                            <option value="4" th:selected="${newReviewForm.rating == 4}" class="text-warning">★★★★</option>
+                                            <option value="5" th:selected="${newReviewForm.rating == 5}" class="text-warning">★★★★★</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="comment" class="fw-bold">コメント</label>
+                                        <textarea id="comment" class="form-control" th:field="*{comment}" rows="3" placeholder="レビューを書く..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn text-white shadow-sm w-100 nagoyameshi-btn">レビューを更新</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div th:replace="~{fragment :: footer}"></div>
+<div th:replace="~{fragment :: scripts}"></div>
+</body>
+</html>
